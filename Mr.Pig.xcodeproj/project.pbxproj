@@ -12,6 +12,10 @@
 		C55837841E6384BD0098E501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55837821E6384BD0098E501 /* Main.storyboard */; };
 		C55837861E6384BD0098E501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55837851E6384BD0098E501 /* Assets.xcassets */; };
 		C55837891E6384BD0098E501 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55837871E6384BD0098E501 /* LaunchScreen.storyboard */; };
+		C55837951E638AD60098E501 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837921E638AD60098E501 /* GameHelper.swift */; };
+		C55837961E638AD60098E501 /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837931E638AD60098E501 /* GameUtils.swift */; };
+		C55837971E638AD60098E501 /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837941E638AD60098E501 /* SCNAction+Extensions.swift */; };
+		C55837991E638B160098E501 /* MrPig.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C55837981E638B160098E501 /* MrPig.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		C55837851E6384BD0098E501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C55837881E6384BD0098E501 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C558378A1E6384BD0098E501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55837921E638AD60098E501 /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		C55837931E638AD60098E501 /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		C55837941E638AD60098E501 /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
+		C55837981E638B160098E501 /* MrPig.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MrPig.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		C558377D1E6384BD0098E501 /* Mr.Pig */ = {
 			isa = PBXGroup;
 			children = (
+				C55837901E638AA40098E501 /* Resources */,
 				C558377E1E6384BD0098E501 /* AppDelegate.swift */,
 				C55837801E6384BD0098E501 /* ViewController.swift */,
 				C55837821E6384BD0098E501 /* Main.storyboard */,
@@ -62,6 +71,25 @@
 				C558378A1E6384BD0098E501 /* Info.plist */,
 			);
 			path = Mr.Pig;
+			sourceTree = "<group>";
+		};
+		C55837901E638AA40098E501 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C55837981E638B160098E501 /* MrPig.scnassets */,
+				C55837911E638AD60098E501 /* GameUtils */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C55837911E638AD60098E501 /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				C55837921E638AD60098E501 /* GameHelper.swift */,
+				C55837931E638AD60098E501 /* GameUtils.swift */,
+				C55837941E638AD60098E501 /* SCNAction+Extensions.swift */,
+			);
+			path = GameUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +155,7 @@
 				C55837891E6384BD0098E501 /* LaunchScreen.storyboard in Resources */,
 				C55837861E6384BD0098E501 /* Assets.xcassets in Resources */,
 				C55837841E6384BD0098E501 /* Main.storyboard in Resources */,
+				C55837991E638B160098E501 /* MrPig.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C55837811E6384BD0098E501 /* ViewController.swift in Sources */,
+				C55837971E638AD60098E501 /* SCNAction+Extensions.swift in Sources */,
+				C55837961E638AD60098E501 /* GameUtils.swift in Sources */,
 				C558377F1E6384BD0098E501 /* AppDelegate.swift in Sources */,
+				C55837951E638AD60098E501 /* GameHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +334,7 @@
 				C558378F1E6384BD0098E501 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
