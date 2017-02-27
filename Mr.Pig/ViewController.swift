@@ -11,6 +11,10 @@ import SceneKit
 import SpriteKit
 
 class ViewController: UIViewController {
+ 
+    var scnView:SCNView!
+    var gameScene:SCNScene!
+    var splashScene:SCNScene!
     
     let game = GameHelper.sharedInstance
 
@@ -29,6 +33,16 @@ class ViewController: UIViewController {
     }
 
     func setupScenes() {
+        
+        print("setupScenes")
+        scnView = SCNView(frame: self.view.frame)
+        self.view.addSubview(scnView)
+        
+        // setup scenes
+        gameScene = SCNScene(named: "/MrPig.scnassets/GameScene.scn")
+        splashScene = SCNScene(named: "/MrPig.scnassets/SplashScene.scn")
+        
+        scnView.scene = splashScene
         
     }
     
