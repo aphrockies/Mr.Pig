@@ -62,7 +62,8 @@
 		C558377D1E6384BD0098E501 /* Mr.Pig */ = {
 			isa = PBXGroup;
 			children = (
-				C55837901E638AA40098E501 /* Resources */,
+				C55837981E638B160098E501 /* MrPig.scnassets */,
+				C55837911E638AD60098E501 /* GameUtils */,
 				C558377E1E6384BD0098E501 /* AppDelegate.swift */,
 				C55837801E6384BD0098E501 /* ViewController.swift */,
 				C55837821E6384BD0098E501 /* Main.storyboard */,
@@ -71,15 +72,6 @@
 				C558378A1E6384BD0098E501 /* Info.plist */,
 			);
 			path = Mr.Pig;
-			sourceTree = "<group>";
-		};
-		C55837901E638AA40098E501 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C55837981E638B160098E501 /* MrPig.scnassets */,
-				C55837911E638AD60098E501 /* GameUtils */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		C55837911E638AD60098E501 /* GameUtils */ = {

@@ -7,18 +7,58 @@
 //
 
 import UIKit
+import SceneKit
+import SpriteKit
 
 class ViewController: UIViewController {
+    
+    let game = GameHelper.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Setup Games
+        setupScenes()
+        setupNodes()
+        setupActions()
+        setupTraffic()
+        setupGestures()
+        setupSounds()
+        
+        
     }
 
+    func setupScenes() {
+        
+    }
+    
+    func setupNodes() {
+        
+    }
+    
+    func setupActions() {
+        
+    }
+    
+    func setupTraffic() {
+        
+    }
+    
+    func setupGestures() {
+        
+    }
+    
+    func setupSounds() {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    
 
 
 }

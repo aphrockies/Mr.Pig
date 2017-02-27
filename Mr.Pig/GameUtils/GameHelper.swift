@@ -64,8 +64,8 @@ class GameHelper {
     
     let plane = SCNPlane(width: 5, height: 1)
     let material = SCNMaterial()
-    material.lightingModelName = SCNLightingModelConstant
-    material.doubleSided = true
+    material.lightingModel = SCNMaterial.LightingModel.constant
+    material.isDoubleSided = true
     material.diffuse.contents = skScene
     plane.materials = [material]
     
@@ -83,7 +83,7 @@ class GameHelper {
   
   func loadSound(name:String, fileNamed:String) {
     if let sound = SCNAudioSource(fileNamed: fileNamed) {
-      sound.positional = false
+      sound.isPositional = false
       sound.volume = 0.3
       sound.load()
       sounds[name] = sound
@@ -92,7 +92,7 @@ class GameHelper {
   
   func playSound(node:SCNNode, name:String) {
     let sound = sounds[name]
-    node.runAction(SCNAction.playAudioSource(sound!, waitForCompletion: false))
+    node.runAction(SCNAction.playAudio(sound!, waitForCompletion: false))
   }
   
   func collectCoin() {
