@@ -66,6 +66,47 @@ class ViewController: UIViewController {
         
     }
     
+    func startGame() {
+        splashScene.isPaused = true
+        
+        let transition = SKTransition.doorsOpenVertical(withDuration: 1.0)
+ 
+        scnView.present(gameScene, with: transition, incomingPointOfView: nil, completionHandler:  {
+            
+            self.game.state = .Playing
+            self.setupSounds()
+            self.gameScene.isPaused = false
+        })
+        
+    }
+    
+    func stopGame() {
+        game.state = .GameOver
+        game.reset()
+    }
+    
+    func startSplash() {
+        
+        gameScene.isPaused = true
+        
+        let transition = SKTransition.doorsOpenVertical(withDuration: 1.0 )
+        scnView.present(gameScene, with: transition, incomingPointOfView: nil, completionHandler:  {
+            
+            self.game.state = .Playing
+            self.setupSounds()
+            self.gameScene.isPaused = false
+        })
+  
+    }
+    
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if game.state == .TapToPlay {
+            startGame()
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

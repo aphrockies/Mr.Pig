@@ -16,6 +16,7 @@
 		C55837961E638AD60098E501 /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837931E638AD60098E501 /* GameUtils.swift */; };
 		C55837971E638AD60098E501 /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837941E638AD60098E501 /* SCNAction+Extensions.swift */; };
 		C55837991E638B160098E501 /* MrPig.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C55837981E638B160098E501 /* MrPig.scnassets */; };
+		C558379B1E6A13360098E501 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = C558379A1E6A13360098E501 /* Notes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C55837931E638AD60098E501 /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
 		C55837941E638AD60098E501 /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
 		C55837981E638B160098E501 /* MrPig.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MrPig.scnassets; sourceTree = "<group>"; };
+		C558379A1E6A13360098E501 /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		C558377D1E6384BD0098E501 /* Mr.Pig */ = {
 			isa = PBXGroup;
 			children = (
+				C558379A1E6A13360098E501 /* Notes */,
 				C55837981E638B160098E501 /* MrPig.scnassets */,
 				C55837911E638AD60098E501 /* GameUtils */,
 				C558377E1E6384BD0098E501 /* AppDelegate.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C55837891E6384BD0098E501 /* LaunchScreen.storyboard in Resources */,
+				C558379B1E6A13360098E501 /* Notes in Resources */,
 				C55837861E6384BD0098E501 /* Assets.xcassets in Resources */,
 				C55837841E6384BD0098E501 /* Main.storyboard in Resources */,
 				C55837991E638B160098E501 /* MrPig.scnassets in Resources */,
