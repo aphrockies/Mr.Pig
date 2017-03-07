@@ -11,10 +11,18 @@ import SceneKit
 import SpriteKit
 
 class ViewController: UIViewController {
- 
+
+    // scenes
     var scnView:SCNView!
     var gameScene:SCNScene!
     var splashScene:SCNScene!
+    
+    // nodes
+    var pigNode: SCNNode!
+    var cameraNode: SCNNode!
+    var cameraFollowNode: SCNNode!
+    var lightFollowNode: SCNNode!
+    
     
     let game = GameHelper.sharedInstance
 
@@ -47,6 +55,18 @@ class ViewController: UIViewController {
     }
     
     func setupNodes() {
+        
+        // Mr. Pig
+        pigNode = gameScene.rootNode.childNode(withName: "MrPig",recursively: true)!
+        
+        // Camera
+        cameraNode = gameScene.rootNode.childNode(withName: "camera", recursively: true)!
+        cameraNode.addChildNode(game.hudNode)
+        
+        cameraNode = gameScene.rootNode.childNode(withName: "FollowCamera",recursively: true)!
+        
+        // Lights
+        lightFollowNode = gameScene.rootNode.childNode(withName: "FollowLight", recursively: true)!
         
     }
     
