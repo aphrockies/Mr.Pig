@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var cameraNode: SCNNode!
     var cameraFollowNode: SCNNode!
     var lightFollowNode: SCNNode!
+    var trafficNode: SCNNode!
     
     
     let game = GameHelper.sharedInstance
@@ -67,6 +68,9 @@ class ViewController: UIViewController {
         
         // Lights
         lightFollowNode = gameScene.rootNode.childNode(withName: "FollowLight", recursively: true)!
+        
+        // Traffic
+        trafficNode = gameScene.rootNode.childNode(withName: "Traffic", recursively: true)!
         
     }
     
