@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     var lightFollowNode: SCNNode!
     var trafficNode: SCNNode!
     
+    // actions
+    var driveLeftAction: SCNAction!
+    var driveRightAction: SCNAction!
+    
     
     let game = GameHelper.sharedInstance
 
@@ -76,9 +80,32 @@ class ViewController: UIViewController {
     
     func setupActions() {
         
+        driveLeftAction = SCNAction.repeatForever(SCNAction.moveBy(x: -2.0, y: 0, z: 0, duration: 1.0))
+        driveRightAction = SCNAction.repeatForever(SCNAction.moveBy(x: 2.0, y: 0, z: 0, duration: 1.0))
+         
     }
     
     func setupTraffic() {
+        
+        for node in trafficNode.childNodes {
+            
+            // 2 buses are slow, the rest are speed demons
+            if (node.name?.contains("Bus"))! {
+                driveLeftAction.speed = 1.0
+                driveRightAction.speed = 1.0
+            } else {
+                driveLeftAction.speed = 2.0
+                driveRightAction.speed = 2.0
+            }
+            
+            // let vehicle drive towards it facing direction
+            if node.eulerAngles.y > 0 {
+                node.runAction(driveLeftAction)
+            } else {
+                node.runAction(driveRightAction)
+            }
+            
+        }
         
     }
     
