@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     var jumpForwardAction: SCNAction!
     var jumpBackwardAction: SCNAction!
     
+    var triggerGameOver: SCNAction!
+    
     
     let game = GameHelper.sharedInstance
 
@@ -112,6 +114,19 @@ class ViewController: UIViewController {
         jumpForwardAction = SCNAction.group([turnForwardAction, bounceAction, moveForwardAction])
         jumpBackwardAction = SCNAction.group([turnBackwardAction, bounceAction, moveBackwardAction])
         
+        let spinAround = SCNAction.rotateBy(x: 0, y: convertToRadians(angle: 720), z: 0, duration: 2.0)
+        let riseUp = SCNAction.moveBy(x: 0, y: 10, z: 0, duration: 2.0)
+        let fadeOut = SCNAction.fadeOpacity(to: 0, duration: 2.0)
+        let goodByePig = SCNAction.group([spinAround, riseUp, fadeOut])
+        
+        let gameOver = SCNAction.run {  (node:SCNNode) -> Void in
+            self.pigNode.position = SCNVector3(x:0, y:0, z:0)
+            self.pigNode.opacity = 1.0
+            self.startSplash()
+        }
+        
+        triggerGameOver = SCNAction.sequence([goodByePig, gameOver])
+        
          
     }
     
@@ -181,6 +196,7 @@ class ViewController: UIViewController {
     func stopGame() {
         game.state = .GameOver
         game.reset()
+        pigNode.runAction(triggerGameOver)
     }
     
     func startSplash() {
@@ -203,6 +219,9 @@ class ViewController: UIViewController {
 //        guard game.state = .Playing else {
 //            return
 //        }
+        
+//        stopGame()
+//        return
         
         print("handleGesture")
         
