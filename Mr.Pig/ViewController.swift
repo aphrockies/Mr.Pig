@@ -70,6 +70,8 @@ class ViewController: UIViewController {
         
         scnView.scene = splashScene
         
+        scnView.delegate = self
+        
     }
     
     func setupNodes() {
@@ -265,7 +267,10 @@ class ViewController: UIViewController {
         
     }
     
-
+    func updatePositions() {
+        collisionNode.position = pigNode.presentation.position
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if game.state == .TapToPlay {
             startGame()
@@ -279,8 +284,20 @@ class ViewController: UIViewController {
     }
     
 
+}
+
+extension ViewController : SCNSceneRendererDelegate {
     
-
-
+    func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: TimeInterval) {
+        guard game.state == .Playing else {
+            return
+        }
+        game.updateHUD()
+        
+        updatePositions()
+        
+    }
+    
+    
 }
 
