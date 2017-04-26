@@ -34,6 +34,13 @@ class ViewController: UIViewController {
     
     var triggerGameOver: SCNAction!
     
+    // collision 
+    var collisionNode: SCNNode!
+    var frontCollisionNode: SCNNode!
+    var backCollisionNode: SCNNode!
+    var leftCollisionNode: SCNNode!
+    var rightCollisionNode: SCNNode!
+    
     
     let game = GameHelper.sharedInstance
 
@@ -81,6 +88,14 @@ class ViewController: UIViewController {
         
         // Traffic
         trafficNode = gameScene.rootNode.childNode(withName: "Traffic", recursively: true)!
+        
+        // collisions
+        collisionNode = gameScene.rootNode.childNode(withName: "Collision", recursively: true)!
+        frontCollisionNode = gameScene.rootNode.childNode(withName: "Front", recursively: true)!
+        backCollisionNode = gameScene.rootNode.childNode(withName: "Back", recursively: true)!
+        leftCollisionNode = gameScene.rootNode.childNode(withName: "Left", recursively: true)!
+        rightCollisionNode = gameScene.rootNode.childNode(withName: "Right", recursively: true)!
+        
         
     }
     

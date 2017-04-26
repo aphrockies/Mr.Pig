@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5155E201E7352CB0062BCC6 /* TreePath.scn in Resources */ = {isa = PBXBuildFile; fileRef = C5155E1F1E7352CB0062BCC6 /* TreePath.scn */; };
+		C53A05291EACE76E00ECBE1B /* SceneKit Scene.scn in Resources */ = {isa = PBXBuildFile; fileRef = C53A05281EACE76E00ECBE1B /* SceneKit Scene.scn */; };
 		C558377F1E6384BD0098E501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C558377E1E6384BD0098E501 /* AppDelegate.swift */; };
 		C55837811E6384BD0098E501 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55837801E6384BD0098E501 /* ViewController.swift */; };
 		C55837841E6384BD0098E501 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55837821E6384BD0098E501 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		C5155E1F1E7352CB0062BCC6 /* TreePath.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = TreePath.scn; path = MrPig.scnassets/TreePath.scn; sourceTree = "<group>"; };
+		C53A05281EACE76E00ECBE1B /* SceneKit Scene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "SceneKit Scene.scn"; sourceTree = "<group>"; };
 		C558377B1E6384BD0098E501 /* Mr.Pig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mr.Pig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C558377E1E6384BD0098E501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C55837801E6384BD0098E501 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		C55837721E6384BD0098E501 = {
 			isa = PBXGroup;
 			children = (
+				C53A05281EACE76E00ECBE1B /* SceneKit Scene.scn */,
 				C558377D1E6384BD0098E501 /* Mr.Pig */,
 				C558377C1E6384BD0098E501 /* Products */,
 			);
@@ -154,6 +157,7 @@
 				C5155E201E7352CB0062BCC6 /* TreePath.scn in Resources */,
 				C558379B1E6A13360098E501 /* Notes in Resources */,
 				C55837861E6384BD0098E501 /* Assets.xcassets in Resources */,
+				C53A05291EACE76E00ECBE1B /* SceneKit Scene.scn in Resources */,
 				C55837841E6384BD0098E501 /* Main.storyboard in Resources */,
 				C55837991E638B160098E501 /* MrPig.scnassets in Resources */,
 			);
