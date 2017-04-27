@@ -30,3 +30,13 @@
 - add front, back, left, right boxes
 - stopped at page 344
 
+2017-APR-25
+
+- add collision boxes for front, back, left and right
+- stopped at page 352, section Configure the physics
+
+2017-APR-26
+
+- add physics and contact bit masks
+- stopped at page 357, section Handle Collisions
+

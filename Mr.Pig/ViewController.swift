@@ -41,6 +41,18 @@ class ViewController: UIViewController {
     var leftCollisionNode: SCNNode!
     var rightCollisionNode: SCNNode!
     
+    // physics
+    let BitMaskPig = 1
+    let BitMaskVehichle = 2
+    let BitMaskObstacle = 4
+    let BitMaskFront = 8
+    let BitMaskBack = 16
+    let BitMaskLeft = 32
+    let BitMaskRight = 64
+    let BitMaskCoin = 128
+    let BitMaskHouse = 256
+    
+    
     
     let game = GameHelper.sharedInstance
 
@@ -97,6 +109,13 @@ class ViewController: UIViewController {
         backCollisionNode = gameScene.rootNode.childNode(withName: "Back", recursively: true)!
         leftCollisionNode = gameScene.rootNode.childNode(withName: "Left", recursively: true)!
         rightCollisionNode = gameScene.rootNode.childNode(withName: "Right", recursively: true)!
+        
+        // set contact bit masks
+        pigNode.physicsBody?.contactTestBitMask = BitMaskVehichle | BitMaskCoin | BitMaskHouse
+        frontCollisionNode.physicsBody?.contactTestBitMask = BitMaskObstacle
+        backCollisionNode.physicsBody?.contactTestBitMask = BitMaskObstacle
+        leftCollisionNode.physicsBody?.contactTestBitMask = BitMaskObstacle
+        rightCollisionNode.physicsBody?.contactTestBitMask = BitMaskObstacle
         
         
     }
