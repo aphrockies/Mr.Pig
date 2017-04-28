@@ -40,3 +40,7 @@
 - add physics and contact bit masks
 - stopped at page 357, section Handle Collisions
 
+2017-APR-27
+- handle collisions
+- stopped at page 360, section Collisions with vehicles
+

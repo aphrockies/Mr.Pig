@@ -41,6 +41,8 @@ class ViewController: UIViewController {
     var leftCollisionNode: SCNNode!
     var rightCollisionNode: SCNNode!
     
+    var activeCollisionsBitMask: Int = 0
+    
     // physics
     let BitMaskPig = 1
     let BitMaskVehichle = 2
@@ -51,6 +53,7 @@ class ViewController: UIViewController {
     let BitMaskRight = 64
     let BitMaskCoin = 128
     let BitMaskHouse = 256
+    
     
     
     
@@ -83,6 +86,8 @@ class ViewController: UIViewController {
         scnView.scene = splashScene
         
         scnView.delegate = self
+        
+        gameScene.physicsWorld.contactDelegate = self
         
     }
     
@@ -259,6 +264,8 @@ class ViewController: UIViewController {
 //        stopGame()
 //        return
         
+        
+        
         print("handleGesture")
         
         switch sender.direction {
@@ -283,6 +290,19 @@ class ViewController: UIViewController {
             
         }
         
+        
+        let activeFrontCollision = activeCollisionsBitMask & BitMaskFront == BitMaskFront
+        let activeBackCollision = activeCollisionsBitMask & BitMaskBack == BitMaskBack
+        let activeLeftCollision = activeCollisionsBitMask & BitMaskLeft == BitMaskLeft
+        let activeRightCollision = activeCollisionsBitMask & BitMaskRight == BitMaskRight
+        
+        guard (sender.direction == .up && !activeFrontCollision) ||
+            (sender.direction == .down && !activeBackCollision) ||
+            (sender.direction == .left && !activeLeftCollision) ||
+            (sender.direction == .right && !activeRightCollision) else {
+                return
+        }
+
         
     }
     
@@ -319,4 +339,41 @@ extension ViewController : SCNSceneRendererDelegate {
     
     
 }
+
+extension ViewController :  SCNPhysicsContactDelegate {
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact ) {
+        guard game.state == .Playing else {
+            return
+        }
+        
+        var collisionBoxNode: SCNNode!
+        if contact.nodeA.physicsBody?.categoryBitMask == BitMaskObstacle {
+            collisionBoxNode = contact.nodeB
+        } else {
+            collisionBoxNode = contact.nodeA
+        }
+        
+        activeCollisionsBitMask |= collisionBoxNode.physicsBody!.categoryBitMask
+        
+    }
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didEnd contact: SCNPhysicsContact ) {
+        
+        guard game.state == .Playing else {
+            return
+        }
+        
+        var collisionBoxNode: SCNNode!
+        if contact.nodeA.physicsBody?.categoryBitMask == BitMaskObstacle {
+            collisionBoxNode = contact.nodeB
+        } else {
+            collisionBoxNode = contact.nodeA
+        }
+        
+        activeCollisionsBitMask &= ~collisionBoxNode.physicsBody!.categoryBitMask
+    }
+    
+}
+
 
